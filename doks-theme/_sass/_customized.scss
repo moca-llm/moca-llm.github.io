@@ -1,0 +1,24 @@
+.hover-underline {  
+    &:hover {
+        border-bottom: 0.0625em solid;
+    }
+  }
+
+.indicator {
+    font-size: 0.75em; // Smaller font size
+    vertical-align: super; // Align to the top (superscript)
+    // font-weight: bold; // Make it bold
+}
+
+.author_width {
+    padding-left: 0;
+}
+
+.row.justify-content-center {
+    display: flex;
+    justify-content: center;
+  }
+
+.university-title {
+    font-size: 1.1em;
+}

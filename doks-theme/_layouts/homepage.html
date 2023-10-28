@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% include site-head.html %}
+	</head>
+	<body class="{{ site.doks.color_theme }}">
+		<div class="hero-subheader{% if page.grid_navigation %} hero-subheader--before-out{% endif %}">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="align-container" data-mh>
+							<div class="align-middle">
+								{% if page.title %}
+									<h1 class="hero-subheader__title">{{ page.title }}</h1>
+								{% endif %}
+								{% if page.description %}
+									<h3 class="hero-subheader__desc">{{ page.description }}</h3>
+								{% endif %}
+								{% for button in page.buttons %}
+									{% if button.external_url == true %}
+									<a href="{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
+										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
+										{{ button.content }}
+									</a>
+									{% else %}
+									<a href="{% if jekyll.environment == 'production' %}{{ site.doks.baseurl }}{% endif %}{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
+										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
+										{{ button.content }}
+									</a>
+									{% endif %}
+								{% endfor %}
+							</div><!-- /.align-inner -->
+						</div><!-- /.align-container -->
+					</div><!-- /.col -->
+					
+				<!-- First row of authors -->
+				<div class="row justify-content-center">
+					{% for author in page.authors %}
+					<div class="col-md-{{ author.column }} author_width">
+						<div class="align-container" data-mh>
+						<div class="align-middle">
+							<div class="hero-subheader__author">
+							<p class="hero-subheader__author-title">
+								<a href="{{ author.title_url }}" class="hover-underline">
+								{{ author.title }} 
+								</a> <span class="indicator">{{ author.indicator }}</span>
+							</p><!-- /.hero-subheader__author-title -->
+							</div><!-- /.hero-subheader__author -->
+						</div><!-- /.align-inner -->
+						</div><!-- /.align-container -->
+					</div><!-- /.col -->
+					{% endfor %}
+				</div><!-- /.row -->
+				
+				<!-- Second row of authors -->
+				<div class="row justify-content-center">
+					{% for author in page.senior_authors %}
+					<div class="col-md-{{ author.column }} author_width">
+						<div class="align-container" data-mh>
+						<div class="align-middle">
+							{% if forloop.last %}
+							<div>
+							{% else %}
+							<div class="hero-subheader__author">
+							{% endif %}
+							<p class="hero-subheader__author-title">
+								<a href="{{ author.title_url }}" class="hover-underline">
+								{{ author.title }} 
+								</a> <span class="indicator">{{ author.indicator }}</span>
+							</p><!-- /.hero-subheader__author-title -->
+							</div><!-- /.hero-subheader__author -->
+						</div><!-- /.align-inner -->
+						</div><!-- /.align-container -->
+					</div><!-- /.col -->
+					{% endfor %}
+				</div><!-- /.row -->
+
+				<div class="row justify-content-center">
+					<div class="col-md-2">
+						<p>Computer Science <span class="indicator">1</span></p>
+					</div>
+					<div class="col-md-1">
+						<p>ICME <span class="indicator">2</span></p>
+					</div>
+					<div class="col-md-1.5">
+						<p>Psychology <span class="indicator">3</span></p>
+					</div>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="hero-subheader__author">
+						<p class="university-title">Stanford University</p></div>
+				</div>
+
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.hero-subheader -->
+		{% if page.grid_navigation %}
+			<div class="section section--darker-theme-color-bg">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="nav-grid nav-grid--out">
+								<div class="row">
+									{% for item in page.grid_navigation %}
+										<div class="col-sm-6 col-lg-4">
+											<a href="{% if jekyll.environment == 'production' %}{{ site.doks.baseurl }}{% endif %}{{ item.url }}" class="nav-grid__item">
+												<div class="nav-grid__content" data-mh>
+													<h2 class="nav-grid__title">{{ item.title }}</h2>
+													<p>{{ item.excerpt }}</p>
+												</div><!-- /.nav-grid__content -->
+												<p class="nav-grid__btn">
+													{{ item.cta }}
+													<i class="icon icon--arrow-right"></i>
+												</p>
+											</a><!-- /.nav-grid__item -->
+										</div><!-- /.col -->
+									{% endfor %}
+								</div><!-- /.row -->
+							</div><!-- /.nav-grid -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.section -->
+		{% endif %}
+		{% include site-footer.html %}
+	</body>
+</html>
