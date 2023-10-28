@@ -66,7 +66,11 @@ grid_navigation:
       url: '#'
 ---
 
-## Hello!!
+## Abstract
+
+## Task
+
+## Main Result
 
 | ID  | Name          | Age | Occupation     |
 |-----|---------------|-----|----------------|

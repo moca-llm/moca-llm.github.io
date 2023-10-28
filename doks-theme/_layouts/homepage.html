@@ -117,7 +117,7 @@
 												</div><!-- /.nav-grid__content -->
 												<p class="nav-grid__btn">
 													{{ item.cta }}
-													<i class="icon icon--arrow-right"></i>
+													<i class="icon icon--arrow-down"></i>
 												</p>
 											</a><!-- /.nav-grid__item -->
 										</div><!-- /.col -->
@@ -130,24 +130,25 @@
 
 			</div><!-- /.section -->
 		{% endif %}
-		<div class="'section">
-		<!-- You can keep adding things here -->
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-8">
-					<div class="content">
-						{{ content }}
-					</div><!-- /.content -->
-				</div><!-- /.col -->
-				<div class="col-md-4 col-md-offset-1">
-					<div class="sections-list-wrapper">
-						<div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
-					</div>
-				</div><!-- /.col -->
-			</div><!-- /.row -->
-		</div><!-- /.container -->
 
+		<div class="'section main-content">
+			<!-- You can keep adding things here -->
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<div class="content">
+							{{ content }}
+						</div><!-- /.content -->
+					</div><!-- /.col -->
+					<div class="col-md-2 col-md-offset-1">
+						<div class="sections-list-wrapper">
+							<div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
 		</div>
+
 		{% include site-footer.html %}
 	</body>
 </html>
