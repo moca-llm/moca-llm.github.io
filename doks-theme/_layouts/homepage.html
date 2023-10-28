@@ -16,19 +16,6 @@
 								{% if page.description %}
 									<h3 class="hero-subheader__desc">{{ page.description }}</h3>
 								{% endif %}
-								{% for button in page.buttons %}
-									{% if button.external_url == true %}
-									<a href="{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
-										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
-										{{ button.content }}
-									</a>
-									{% else %}
-									<a href="{% if jekyll.environment == 'production' %}{{ site.doks.baseurl }}{% endif %}{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
-										{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
-										{{ button.content }}
-									</a>
-									{% endif %}
-								{% endfor %}
 							</div><!-- /.align-inner -->
 						</div><!-- /.align-container -->
 					</div><!-- /.col -->
@@ -93,6 +80,25 @@
 				</div>
 
 				</div><!-- /.row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="align-container" data-mh>
+							<div class="align-middle">
+					{% for button in page.buttons %}
+						{% if button.external_url == true %}
+						<a href="{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
+							{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
+							{{ button.content }}
+						</a>
+						{% else %}
+						<a href="{% if jekyll.environment == 'production' %}{{ site.doks.baseurl }}{% endif %}{{ button.url }}" class="btn btn--dark btn--rounded btn--w-icon">
+							{% if button.icon %}<i class="icon icon--{{ button.icon }}"></i>{% endif %}
+							{{ button.content }}
+						</a>
+						{% endif %}
+					{% endfor %}
+					</div></div></div>
+				</div>
 			</div><!-- /.container -->
 		</div><!-- /.hero-subheader -->
 		{% if page.grid_navigation %}
@@ -121,6 +127,9 @@
 						</div><!-- /.col -->
 					</div><!-- /.row -->
 				</div><!-- /.container -->
+				
+				<!-- You can keep adding things here -->
+
 			</div><!-- /.section -->
 		{% endif %}
 		{% include site-footer.html %}

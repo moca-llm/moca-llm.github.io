@@ -6,14 +6,14 @@ keywords:
 # Hero section
 title: "MoCa: Measuring Human-Language Model Alignment on Causal and Moral Judgment Tasks"
 description: NeurIPS 2023
-# buttons:
-#     - content: Button
-#       url: '#'
-#       external_url: false
-#     - icon: github
-#       content: Button with icon
-#       url: '#'
-#       external_url: true
+buttons:
+    - content: Paper
+      url: '#'
+      external_url: true
+    - icon: github
+      content: Code
+      url: '#'
+      external_url: true
 
 # Author box
 # author:
@@ -52,8 +52,16 @@ senior_authors:
 
 # Grid navigation
 grid_navigation:
-    - title: Navigation
-      excerpt: Section description
+    - title: Abstract/Task
+      excerpt: Overview of task and stories in the dataset
+      cta: Read more
+      url: '#'
+    - title: Main Result
+      excerpt: Aggregate-level alignment of LLM models with Human
+      cta: Read more
+      url: '#'
+    - title: Implicit Alignment
+      excerpt: The analysis over the implicit tendencies of LLMs and their alignment with human tendencies
       cta: Read more
       url: '#'
 ---
