@@ -29,3 +29,10 @@ page_nav:
 ---
 
 Write your markdown here ...
+
+| ID  | Name          | Age | Occupation     |
+|-----|---------------|-----|----------------|
+| 1   | John Doe      | 28  | Software Engineer |
+| 2   | Jane Doe      | 25  | Data Scientist |
+| 3   | Sam Smith     | 32  | Product Manager |
+| 4   | Emily Johnson | 29  | Graphic Designer |
