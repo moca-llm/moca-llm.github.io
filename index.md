@@ -28,7 +28,7 @@ authors:
     indicator: 1
     column: 2
   - title: Yuhui Zhang
-    title_url: ""
+    title_url: "https://cs.stanford.edu/~yuhuiz/"
     indicator: 1
     column: 2
   - title: Atharva Amdekar
@@ -38,15 +38,15 @@ authors:
 
 senior_authors:
   - title: Chris Piech
-    title_url: "https://anie.me/"
+    title_url: "https://stanford.edu/~cpiech/bio/index.html"
     indicator: 1
     column: 1.5
   - title: Tatsu H. Hashimoto
-    title_url: ""
+    title_url: "https://thashim.github.io/"
     indicator: 1
     column: 3
   - title: Tobias Gerstenberg
-    title_url: ""
+    title_url: "https://cicl.stanford.edu/member/tobias_gerstenberg/"
     indicator: 3
     column: 3
 
