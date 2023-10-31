@@ -8,11 +8,11 @@ title: "MoCa: Measuring Human-Language Model Alignment on Causal and Moral Judgm
 description: NeurIPS 2023
 buttons:
     - content: Paper
-      url: '#'
+      url: 'https://arxiv.org/abs/2310.19677'
       external_url: true
     - icon: github
       content: Code
-      url: '#'
+      url: 'https://github.com/cicl-stanford/moca'
       external_url: true
     - icon:
       content: Contact
@@ -24,7 +24,7 @@ buttons:
 #     title_url: "https://anie.me/"
 #     external_url: true
 #     indicator: 1
-    
+
 authors:
   - title: Allen Nie
     title_url: "https://anie.me/"
@@ -73,13 +73,36 @@ grid_navigation:
 
 Human commonsense understanding of the physical and social world is organized around intuitive theories. These theories support making causal and moral judgments. When something bad happens, we naturally ask: who did what, and why? A rich literature in cognitive science has studied people's causal and moral intuitions. This work has revealed a number of factors that systematically influence people's judgments, such as the violation of norms and whether the harm is avoidable or inevitable. We collected a dataset of stories from 24 cognitive science papers and developed a system to annotate each story with the factors they investigated. Using this dataset, we test whether large language models (LLMs) make causal and moral judgments about text-based scenarios that align with those of human participants. On the aggregate level, alignment has improved with more recent LLMs. However, using statistical analyses, we find that LLMs weigh the different factors quite differently from human participants. These results show how curated, challenge datasets combined with insights from cognitive science can help us go beyond comparisons based merely on aggregate metrics: we uncover LLMs implicit tendencies and show to what extent these align with human intuitions.
 
+## Intro
+
+Humans rely on their intuition to understand the world. This intuition helps us to understand not only
+physical events (e.g., one ball caused the other to move) but also complex social situations (e.g., the
+collapse of Sam Bankman-Fried’s FTX caused unprecedented turmoil in the cryptocurrency market).
+Given a complex set of events, even with a great amount of ambiguity, we can answer questions
+such as “What or who caused it?” Our answers to this question reflect how we intuitively understand
+events, people, and the world around us (Sloman & Lagnado, 2015; Pearl & Mackenzie, 2018). How
+do humans handle this complexity?
+
+Cognitive scientists have proposed that we do so by organizing our understanding of the world into
+intuitive theories (Gerstenberg & Tenenbaum, 2017; Wellman & Gelman, 1992). Accordingly, people
+have intuitive theories of the physical and social world with which we reason about how objects
+and agents interact with one another (Battaglia et al., 2013; Ullman et al., 2017; Gerstenberg et al.,
+2021; Baker et al., 2017; Davis & Marcus, 2015; Lake et al., 2017). Concepts related to causality and
+morality form key ingredients of people’s physical and social theories. Given a story, humans can
+readily make causal and moral judgments about the objects and agents involved in the story.
+Studying these human **intuitions** or systematic **tendencies** when making decisions or judgments
+is the central focus of psychological experimentations. What are these tendencies? How do they
+influence our judgment? Over the last several decades, using text-based vignettes, psychologists
+have disentangled what factors influence people’s causal and moral judgments. These factors can be
+understood as the building blocks of our thought processes for making causal and moral judgments.
+
 ## Task
 
 ![](./images/data_example.png)
 **Two examples from our collected dataset.** (a) shows a causal judgment story, and (b) shows a moral judgment story. In (a), a conjunction of two events was required, an abnormal event occurred, and Jane violated a prescriptive norm (scenario taken from Knobe & Fraser, 2008). In (b), the teenager’s death was inevitable; his death is a necessary means to save others, and bringing about his death requires the use of personal force (scenario taken from Christensen et al., 2014).
 
 ![](./images/data_dist.png)
-**Dataset:** We report dataset statistics on the label distribution, average length of each story, and inter-rater agreement between two annotators on the factors and the sentences they highlight. Additionally, we collect a binary response for each story from 25 people.
+**Dataset:** We report dataset statistics on the label distribution, average length of each story, and inter-rater agreement between two annotators on the factors and the sentences they highlight. Additionally, we collect a binary response for each story from **25 people**.
 
 Each story is annotated with latent factors that can help us detect implicit tendencies from humans and LLMs.
 
@@ -88,7 +111,11 @@ Each story is annotated with latent factors that can help us detect implicit ten
 
 ## Main Result
 
-<h3>Chatd Models</h3>
+We conduct a 3-class comparison to compute accuracy: a response of "Yes", "No", and an additional response of "ambiguous" when the agreement between the average human responses or the probability of model output is 50% &plusmn; 10%. This gives us a discrete agreement (Agg) between the model and participants. We also report AuROC between the model's output and the distribution of human answering yes or no. Additionally, we report the absolute-mean-squared error (MAE), and cross-entropy (CE) on the probability of the matched label.
+
+We present both **Causal Judgment Task** (Left Table) and **Moral Permissibility Task** (Right Table), across chat-based LLMs and completion-based LLMs. 
+
+<h3>Chat Models</h3>
 
 <table style="display: inline-block;">
   <thead>
@@ -127,8 +154,8 @@ Each story is annotated with latent factors that can help us detect implicit ten
       <td>2.03</td>
     </tr>
     <tr>
-      <td>OpenAI</td>
-      <td>Anthropic-claude-v1</td>
+      <td>Anthropic</td>
+      <td>claude-v1</td>
       <td>0.57</td>
       <td>36.1</td>
       <td>0.34</td>
@@ -406,8 +433,8 @@ Each story is annotated with latent factors that can help us detect implicit ten
       <td>1.45</td>
     </tr>
     <tr>
-      <td>OpenAI</td>
-      <td>Anthropic-claude-v1</td>
+      <td>Anthropic</td>
+      <td>claude-v1</td>
       <td>0.59</td>
       <td>37.1</td>
       <td>0.29</td>
