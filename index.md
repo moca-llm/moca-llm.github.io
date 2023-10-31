@@ -44,7 +44,7 @@ senior_authors:
     title_url: "https://stanford.edu/~cpiech/bio/index.html"
     indicator: 1
     column: 1.5
-  - title: Tatsu H. Hashimoto
+  - title: Tatsunori Hashimoto
     title_url: "https://thashim.github.io/"
     indicator: 1
     column: 3
