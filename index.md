@@ -14,6 +14,9 @@ buttons:
       content: Code
       url: '#'
       external_url: true
+    - icon:
+      content: Contact
+      url: "mailto:moca.llm.help@gmail.com"
 
 # Author box
 # author:
@@ -85,38 +88,805 @@ Each story is annotated with latent factors that can help us detect implicit ten
 
 ## Main Result
 
-|  Causal Judgment Task<br>Model | Agg (&uarr;)| AUC(&uarr;) | MAE(&darr;) | CE(&darr;) |
-|---------------------------|----|----|----|----|
-|  Mistral-7B-Instruct-v0.1 |43.4|0.63|0.26|0.82|
-|   Platypus2-70B-instruct  |41.3|0.59|0.45|2.03|
-|    vicuna-13b-v1.5-16k    |37.8|0.53|0.46|2.09|
-|         Koala-13B         |37.5|0.51|0.40|1.88|
-|       starchat-alpha      |35.8|0.56|0.33|1.35|
-|     chronos-hermes-13b    |35.4|0.52|0.48|2.20|
-|        dolly-v2-7b        |35.4|0.53|0.37|1.59|
-|    Mistral-7B-OpenOrca    |34.7|0.56|0.31|1.18|
-|      vicuna-13b-v1.5      |34.7|0.50|0.46|2.16|
-|        guanaco-13b        |34.4|0.52|0.42|1.82|
-|         alpaca-7b         |34.0|0.50|0.49|2.37|
-|    fastchat-t5-3b-v1.0    |34.0|0.52|0.46|2.11|
-|      llama-2-13b-chat     |34.0|0.52|0.35|1.39|
-|        dolly-v2-12b       |33.7|0.52|0.29|1.12|
-|  GPT-NeoXT-Chat-Base-20B  |33.3|0.49|0.36|1.54|
-|         guanaco-7b        |33.3|0.50|0.42|1.86|
-| Pythia-Chat-Base-7B-v0.16 |33.0|0.48|0.49|2.46|
-|     falcon-7b-instruct    |33.0|0.50|0.35|1.45|
-|        guanaco-65b        |33.0|0.49|0.21|0.61|
-|  RedPajama-INCITE-7B-Chat |32.3|0.50|0.35|1.47|
-|        dolly-v2-3b        |32.3|0.50|0.24|0.80|
-|RedPajama-INCITE-Chat-3B-v1|31.9|0.48|0.34|1.31|
-|    falcon-40b-instruct    |31.9|0.49|0.20|0.50|
-|      llama-2-70b-chat     |31.6|0.54|0.31|1.11|
-|      llama-2-7b-chat      |31.6|0.51|0.22|0.58|
-|       vicuna-7b-v1.5      |31.2|0.49|0.20|0.50|
-|        mpt-7b-chat        |31.2|0.50|0.21|0.58|
-|        Qwen-7B-Chat       |28.8|0.46|0.48|2.35|
+<h3>Chatd Models</h3>
 
+<table style="display: inline-block;">
+  <thead>
+    <tr>
+      <th>Organization</th>
+      <th>Causal Judgment Task<br />Model</th>
+      <th>AUC(↑)</th>
+      <th>Agg(↑)</th>
+      <th>MAE(↓)</th>
+      <th>CE(↓)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class='has-border'>mistralai</td>
+      <td class='has-border'>Mistral-7B-Instruct-v0.1</td>
+      <td class='has-border'><b>0.63</b></td>
+      <td>43.4</td>
+      <td>0.26</td>
+      <td>0.82</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT-4</td>
+      <td>0.61</td>
+      <td>43.1</td>
+      <td>0.44</td>
+      <td>1.89</td>
+    </tr>
+    <tr>
+      <td>garage-bAInd</td>
+      <td>Platypus2-70B-instruct</td>
+      <td>0.59</td>
+      <td>41.3</td>
+      <td>0.45</td>
+      <td>2.03</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>Anthropic-claude-v1</td>
+      <td>0.57</td>
+      <td>36.1</td>
+      <td>0.34</td>
+      <td>1.37</td>
+    </tr>
+    <tr>
+      <td>HuggingFace</td>
+      <td>starchat-alpha</td>
+      <td>0.56</td>
+      <td>35.8</td>
+      <td>0.33</td>
+      <td>1.35</td>
+    </tr>
+    <tr>
+      <td>OpenOrca</td>
+      <td>Mistral-7B-OpenOrca</td>
+      <td>0.56</td>
+      <td>34.7</td>
+      <td>0.31</td>
+      <td>1.18</td>
+    </tr>
+    <tr>
+      <td>Meta</td>
+      <td>llama-2-70b-chat</td>
+      <td>0.54</td>
+      <td>31.6</td>
+      <td>0.31</td>
+      <td>1.11</td>
+    </tr>
+    <tr>
+      <td>Databricks</td>
+      <td>dolly-v2-7b</td>
+      <td>0.53</td>
+      <td>35.4</td>
+      <td>0.37</td>
+      <td>1.59</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>vicuna-13b-v1.5-16k</td>
+      <td>0.53</td>
+      <td>37.8</td>
+      <td>0.46</td>
+      <td>2.09</td>
+    </tr>
+    <tr>
+      <td>Tim Dettmers</td>
+      <td>guanaco-13b</td>
+      <td>0.52</td>
+      <td>34.4</td>
+      <td>0.42</td>
+      <td>1.82</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>fastchat-t5-3b-v1.0</td>
+      <td>0.52</td>
+      <td>34.0</td>
+      <td>0.46</td>
+      <td>2.11</td>
+    </tr>
+    <tr>
+      <td>Databricks</td>
+      <td>dolly-v2-12b</td>
+      <td>0.52</td>
+      <td>33.7</td>
+      <td>0.29</td>
+      <td>1.12</td>
+    </tr>
+    <tr>
+      <td>Austism</td>
+      <td>chronos-hermes-13b</td>
+      <td>0.52</td>
+      <td>35.4</td>
+      <td>0.48</td>
+      <td>2.20</td>
+    </tr>
+    <tr>
+      <td>Meta</td>
+      <td>llama-2-13b-chat</td>
+      <td>0.52</td>
+      <td>34.0</td>
+      <td>0.35</td>
+      <td>1.39</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT3.5-turbo</td>
+      <td>0.51</td>
+      <td>35.4</td>
+      <td>0.45</td>
+      <td>2.11</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>Koala-13B</td>
+      <td>0.51</td>
+      <td>37.5</td>
+      <td>0.40</td>
+      <td>1.88</td>
+    </tr>
+    <tr>
+      <td>Meta</td>
+      <td>llama-2-7b-chat</td>
+      <td>0.51</td>
+      <td>31.6</td>
+      <td>0.22</td>
+      <td>0.58</td>
+    </tr>
+    <tr>
+      <td>TII UAE</td>
+      <td>falcon-7b-instruct</td>
+      <td>0.50</td>
+      <td>33.0</td>
+      <td>0.35</td>
+      <td>1.45</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>vicuna-13b-v1.5</td>
+      <td>0.50</td>
+      <td>34.7</td>
+      <td>0.46</td>
+      <td>2.16</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>RedPajama-7B-Chat</td>
+      <td>0.50</td>
+      <td>32.3</td>
+      <td>0.35</td>
+      <td>1.47</td>
+    </tr>
+    <tr>
+      <td>Stanford</td>
+      <td>alpaca-7b</td>
+      <td>0.50</td>
+      <td>34.0</td>
+      <td>0.49</td>
+      <td>2.37</td>
+    </tr>
+    <tr>
+      <td>Databricks</td>
+      <td>dolly-v2-3b</td>
+      <td>0.50</td>
+      <td>32.3</td>
+      <td>0.24</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>Tim Dettmers</td>
+      <td>guanaco-7b</td>
+      <td>0.50</td>
+      <td>33.3</td>
+      <td>0.42</td>
+      <td>1.86</td>
+    </tr>
+    <tr>
+      <td>Mosaic ML</td>
+      <td>mpt-7b-chat</td>
+      <td>0.50</td>
+      <td>31.2</td>
+      <td>0.21</td>
+      <td>0.58</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>vicuna-7b-v1.5</td>
+      <td>0.49</td>
+      <td>31.2</td>
+      <td>0.20</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <td>TII UAE</td>
+      <td>falcon-40b-instruct</td>
+      <td>0.49</td>
+      <td>31.9</td>
+      <td>0.20</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>GPT-NeoXT-Chat-20B</td>
+      <td>0.49</td>
+      <td>33.3</td>
+      <td>0.36</td>
+      <td>1.54</td>
+    </tr>
+    <tr>
+      <td>Tim Dettmers</td>
+      <td>guanaco-65b</td>
+      <td>0.49</td>
+      <td>33.0</td>
+      <td>0.21</td>
+      <td>0.61</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>RedPajama-Chat-3B-v1</td>
+      <td>0.48</td>
+      <td>31.9</td>
+      <td>0.34</td>
+      <td>1.31</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>Pythia-Chat-7B-v0.16</td>
+      <td>0.48</td>
+      <td>33.0</td>
+      <td>0.49</td>
+      <td>2.46</td>
+    </tr>
+    <tr>
+      <td>Qwen</td>
+      <td>Qwen-7B-Chat</td>
+      <td>0.46</td>
+      <td>28.8</td>
+      <td>0.48</td>
+      <td>2.35</td>
+    </tr>
+  </tbody>
+</table>
 
+<table style="display: inline-block; margin-left: 5px;">
+  <thead>
+    <tr>
+      <th>Organization</th>
+      <th>Moral Permissibility Task<br />Model</th>
+      <th>AUC(↑)</th>
+      <th>Agg(↑)</th>
+      <th>MAE(↓)</th>
+      <th>CE(↓)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class='has-border'>OpenAI</td>
+      <td class='has-border'>GPT-4</td>
+      <td class='has-border'><b>0.74</b></td>
+      <td>41.9</td>
+      <td>0.31</td>
+      <td>1.28</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT3.5-turbo</td>
+      <td>0.65</td>
+      <td>40.3</td>
+      <td>0.33</td>
+      <td>1.49</td>
+    </tr>
+    <tr>
+      <td>TII UAE</td>
+      <td>falcon-7b-instruct</td>
+      <td>0.64</td>
+      <td>43.5</td>
+      <td>0.29</td>
+      <td>0.95</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>fastchat-t5-3b-v1.0</td>
+      <td>0.62</td>
+      <td>25.0</td>
+      <td>0.48</td>
+      <td>2.38</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>GPT-NeoXT-Chat-20B</td>
+      <td>0.61</td>
+      <td>36.3</td>
+      <td>0.37</td>
+      <td>1.45</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>Anthropic-claude-v1</td>
+      <td>0.59</td>
+      <td>37.1</td>
+      <td>0.29</td>
+      <td>1.29</td>
+    </tr>
+    <tr>
+      <td>garage-bAInd</td>
+      <td>Platypus2-70B-instruct</td>
+      <td>0.57</td>
+      <td>26.6</td>
+      <td>0.41</td>
+      <td>1.87</td>
+    </tr>
+    <tr>
+      <td>OpenOrca</td>
+      <td>Mistral-7B-OpenOrca</td>
+      <td>0.56</td>
+      <td>46.0</td>
+      <td>0.26</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <td>Databricks</td>
+      <td>dolly-v2-3b</td>
+      <td>0.53</td>
+      <td>44.4</td>
+      <td>0.18</td>
+      <td>0.49</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>RedPajama-7B-Chat</td>
+      <td>0.53</td>
+      <td>42.7</td>
+      <td>0.21</td>
+      <td>0.73</td>
+    </tr>
+    <tr>
+      <td>Meta</td>
+      <td>llama-2-7b-chat</td>
+      <td>0.53</td>
+      <td>47.6</td>
+      <td>0.16</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>RedPajama-Chat-3B-v1</td>
+      <td>0.52</td>
+      <td>39.5</td>
+      <td>0.28</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <td>Tim Dettmers</td>
+      <td>guanaco-13b</td>
+      <td>0.52</td>
+      <td>34.7</td>
+      <td>0.28</td>
+      <td>1.09</td>
+    </tr>
+    <tr>
+      <td>Databricks</td>
+      <td>dolly-v2-7b</td>
+      <td>0.52</td>
+      <td>33.9</td>
+      <td>0.39</td>
+      <td>1.49</td>
+    </tr>
+    <tr>
+      <td>HuggingFace</td>
+      <td>starchat-alpha</td>
+      <td>0.52</td>
+      <td>37.9</td>
+      <td>0.31</td>
+      <td>1.28</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>vicuna-13b-v1.5</td>
+      <td>0.52</td>
+      <td>38.7</td>
+      <td>0.36</td>
+      <td>1.53</td>
+    </tr>
+    <tr>
+      <td>mistralai</td>
+      <td>Mistral-7B-Instruct-v0.1</td>
+      <td>0.52</td>
+      <td>37.1</td>
+      <td>0.27</td>
+      <td>1.12</td>
+    </tr>
+    <tr>
+      <td>Meta</td>
+      <td>llama-2-70b-chat</td>
+      <td>0.51</td>
+      <td>46.8</td>
+      <td>0.17</td>
+      <td>0.51</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>Koala-13B</td>
+      <td>0.51</td>
+      <td>38.7</td>
+      <td>0.35</td>
+      <td>1.46</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>vicuna-13b-v1.5-16k</td>
+      <td>0.51</td>
+      <td>20.2</td>
+      <td>0.52</td>
+      <td>2.80</td>
+    </tr>
+    <tr>
+      <td>Tim Dettmers</td>
+      <td>guanaco-7b</td>
+      <td>0.51</td>
+      <td>41.1</td>
+      <td>0.26</td>
+      <td>1.11</td>
+    </tr>
+    <tr>
+      <td>Stanford</td>
+      <td>alpaca-7b</td>
+      <td>0.50</td>
+      <td>30.6</td>
+      <td>0.48</td>
+      <td>1.99</td>
+    </tr>
+    <tr>
+      <td>Mosaic ML</td>
+      <td>mpt-7b-chat</td>
+      <td>0.50</td>
+      <td>46.8</td>
+      <td>0.16</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <td>LM Sys</td>
+      <td>vicuna-7b-v1.5</td>
+      <td>0.50</td>
+      <td>45.2</td>
+      <td>0.16</td>
+      <td>0.48</td>
+    </tr>
+    <tr>
+      <td>TII UAE</td>
+      <td>falcon-40b-instruct</td>
+      <td>0.50</td>
+      <td>46.8</td>
+      <td>0.16</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <td>Qwen</td>
+      <td>Qwen-7B-Chat</td>
+      <td>0.50</td>
+      <td>25.0</td>
+      <td>0.45</td>
+      <td>2.37</td>
+    </tr>
+    <tr>
+      <td>Databricks</td>
+      <td>dolly-v2-12b</td>
+      <td>0.48</td>
+      <td>38.7</td>
+      <td>0.26</td>
+      <td>1.02</td>
+    </tr>
+    <tr>
+      <td>Tim Dettmers</td>
+      <td>guanaco-65b</td>
+      <td>0.48</td>
+      <td>42.7</td>
+      <td>0.20</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <td>Austism</td>
+      <td>chronos-hermes-13b</td>
+      <td>0.47</td>
+      <td>25.8</td>
+      <td>0.48</td>
+      <td>2.51</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>Pythia-Chat-7B-v0.16</td>
+      <td>0.45</td>
+      <td>24.2</td>
+      <td>0.52</td>
+      <td>2.54</td>
+    </tr>
+    <tr>
+      <td>Meta</td>
+      <td>llama-2-13b-chat</td>
+      <td>0.42</td>
+      <td>39.5</td>
+      <td>0.25</td>
+      <td>1.05</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Completion-based Models</h3>
+
+<table style="display: inline-block;">
+  <thead>
+    <tr>
+      <th>Organization</th>
+      <th>Causal Judgment Task<br />Model</th>
+      <th>AUC(↑)</th>
+      <th>Agg(↑)</th>
+      <th>MAE(↓)</th>
+      <th>CE(↓)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class='has-border'>OpenAI</td>
+      <td class='has-border'>GPT3.5-davinci-v3</td>
+      <td class='has-border'><b>0.67</b></td>
+      <td>41.3</td>
+      <td>0.41</td>
+      <td>1.39</td>
+    </tr>
+    <tr>
+      <td>WizardLM</td>
+      <td>WizardLM-70B-V1.0</td>
+      <td>0.62</td>
+      <td>40.3</td>
+      <td>0.43</td>
+      <td>1.94</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT3.5-davinci-v2</td>
+      <td>0.61</td>
+      <td>37.8</td>
+      <td>0.31</td>
+      <td>0.72</td>
+    </tr>
+    <tr>
+      <td>Mosaic ML</td>
+      <td>mpt-30b-instruct</td>
+      <td>0.56</td>
+      <td>35.1</td>
+      <td>0.34</td>
+      <td>1.37</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>LLaMA-2-7B-32K</td>
+      <td>0.52</td>
+      <td>36.1</td>
+      <td>0.49</td>
+      <td>2.28</td>
+    </tr>
+    <tr>
+      <td>EleutherAI</td>
+      <td>pythia-12b-v0</td>
+      <td>0.52</td>
+      <td>34.7</td>
+      <td>0.37</td>
+      <td>1.53</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT3-curie-v1</td>
+      <td>0.51</td>
+      <td>36.8</td>
+      <td>0.37</td>
+      <td>1.14</td>
+    </tr>
+    <tr>
+      <td>EleutherAI</td>
+      <td>pythia-2.8b-v0</td>
+      <td>0.51</td>
+      <td>31.9</td>
+      <td>0.40</td>
+      <td>1.73</td>
+    </tr>
+    <tr>
+      <td>EleutherAI</td>
+      <td>pythia-6.9b</td>
+      <td>0.51</td>
+      <td>34.4</td>
+      <td>0.36</td>
+      <td>1.49</td>
+    </tr>
+    <tr>
+      <td>TII UAE</td>
+      <td>falcon-7b</td>
+      <td>0.49</td>
+      <td>31.6</td>
+      <td>0.47</td>
+      <td>2.20</td>
+    </tr>
+    <tr>
+      <td>Qwen</td>
+      <td>Qwen-7B</td>
+      <td>0.48</td>
+      <td>33.0</td>
+      <td>0.51</td>
+      <td>2.46</td>
+    </tr>
+    <tr>
+      <td>mistralai</td>
+      <td>Mistral-7B-v0.1</td>
+      <td>0.48</td>
+      <td>30.2</td>
+      <td>0.30</td>
+      <td>1.12</td>
+    </tr>
+    <tr>
+      <td>TII UAE</td>
+      <td>falcon-40b</td>
+      <td>0.48</td>
+      <td>33.0</td>
+      <td>0.45</td>
+      <td>2.17</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT3-babbage-v1</td>
+      <td>0.47</td>
+      <td>31.2</td>
+      <td>0.33</td>
+      <td>0.74</td>
+    </tr>
+    <tr>
+      <td>Mosaic ML</td>
+      <td>mpt-30b</td>
+      <td>0.45</td>
+      <td>31.6</td>
+      <td>0.26</td>
+      <td>0.90</td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="display: inline-block; margin-left: 5px;">
+  <thead>
+    <tr>
+      <th>Organization</th>
+      <th>Moral Permissibility Task<br />Model</th>
+      <th>AUC(↑)</th>
+      <th>Agg(↑)</th>
+      <th>MAE(↓)</th>
+      <th>CE(↓)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class='has-border'>OpenAI</td>
+      <td class='has-border'>GPT3.5-davinci-v2</td>
+      <td class='has-border'><b>0.67</b></td>
+      <td>32.3</td>
+      <td>0.30</td>
+      <td>0.74</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT3.5-davinci-v3</td>
+      <td>0.61</td>
+      <td>20.2</td>
+      <td>0.51</td>
+      <td>2.61</td>
+    </tr>
+    <tr>
+      <td>Mosaic ML</td>
+      <td>mpt-30b-instruct</td>
+      <td>0.60</td>
+      <td>39.5</td>
+      <td>0.31</td>
+      <td>1.26</td>
+    </tr>
+    <tr>
+      <td>EleutherAI</td>
+      <td>pythia-2.8b-v0</td>
+      <td>0.58</td>
+      <td>37.1</td>
+      <td>0.35</td>
+      <td>1.25</td>
+    </tr>
+    <tr>
+      <td>EleutherAI</td>
+      <td>pythia-12b-v0</td>
+      <td>0.57</td>
+      <td>28.2</td>
+      <td>0.36</td>
+      <td>1.53</td>
+    </tr>
+    <tr>
+      <td>TII UAE</td>
+      <td>falcon-40b</td>
+      <td>0.55</td>
+      <td>35.5</td>
+      <td>0.35</td>
+      <td>1.31</td>
+    </tr>
+    <tr>
+      <td>WizardLM</td>
+      <td>WizardLM-70B-V1.0</td>
+      <td>0.55</td>
+      <td>36.3</td>
+      <td>0.35</td>
+      <td>1.69</td>
+    </tr>
+    <tr>
+      <td>Mosaic ML</td>
+      <td>mpt-30b</td>
+      <td>0.55</td>
+      <td>46.0</td>
+      <td>0.19</td>
+      <td>0.57</td>
+    </tr>
+    <tr>
+      <td>Together</td>
+      <td>LLaMA-2-7B-32K</td>
+      <td>0.52</td>
+      <td>25.0</td>
+      <td>0.50</td>
+      <td>2.25</td>
+    </tr>
+    <tr>
+      <td>EleutherAI</td>
+      <td>pythia-6.9b</td>
+      <td>0.51</td>
+      <td>34.7</td>
+      <td>0.33</td>
+      <td>1.63</td>
+    </tr>
+    <tr>
+      <td>Qwen</td>
+      <td>Qwen-7B</td>
+      <td>0.49</td>
+      <td>27.4</td>
+      <td>0.47</td>
+      <td>2.17</td>
+    </tr>
+    <tr>
+      <td>TII UAE</td>
+      <td>falcon-7b</td>
+      <td>0.48</td>
+      <td>32.3</td>
+      <td>0.35</td>
+      <td>1.29</td>
+    </tr>
+    <tr>
+      <td>mistralai</td>
+      <td>Mistral-7B-v0.1</td>
+      <td>0.47</td>
+      <td>45.2</td>
+      <td>0.23</td>
+      <td>0.75</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT3-curie-v1</td>
+      <td>0.45</td>
+      <td>26.6</td>
+      <td>0.39</td>
+      <td>1.32</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT3-babbage-v1</td>
+      <td>0.43</td>
+      <td>18.5</td>
+      <td>0.41</td>
+      <td>1.03</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Implicit Alignment
 
