@@ -1,190 +1,4059 @@
 <script>
+
+causal_data = {
+    "gpt-4": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 17.7,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 5.0,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 13.4,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 24.0,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 11.6,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 5.4,
+            "category": 1
+        }
+    ],
+    "gpt-3.5-turbo": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 17.3,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 32.4,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 9.1,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 13.0,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 13.7,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 30.2,
+            "category": 1
+        }
+    ],
+    "text-babbage-001": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 15.5,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 4.8,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 6.8,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 19.8,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 0.1,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 4.6,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 4.2,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 22.1,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 15.5,
+            "category": 1
+        }
+    ],
+    "text-curie-001": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 10.2,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 7.2,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 2.1,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 27.1,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 16.7,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 11.1,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 3.1,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 8.9,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 22.1,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 1
+        }
+    ],
+    "text-davinci-002": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 27.2,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 11.7,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 26.4,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 11.2,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 23.5,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 5.2,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 9.3,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 6.1,
+            "category": 1
+        }
+    ],
+    "text-davinci-003": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 0.9,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 42.9,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 9.7,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 34.6,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 27.5,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 10.6,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 21.8,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 29.7,
+            "category": 1
+        }
+    ],
+    "claude-v1": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 13.0,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 18.1,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 13.2,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 31.2,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 9.6,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 10.2,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 2.2,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 22.6,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 4.1,
+            "category": 1
+        }
+    ],
+    "llama-2-7b-chat": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 2.2,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 1.6,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 3.7,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 3.3,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 3.9,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 4.2,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 35.0,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 9.4,
+            "category": 1
+        }
+    ],
+    "llama-2-13b-chat": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 1.1,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 8.0,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 8.1,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 43.8,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 3.2,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 22.5,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 5.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 7.2,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 12.5,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 14.4,
+            "category": 1
+        }
+    ],
+    "llama-2-70b-chat": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 7.9,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 25.4,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 12.4,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 42.5,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 10.2,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 9.5,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 3.5,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 2.6,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 7.8,
+            "category": 1
+        }
+    ],
+    "vicuna-13b-v1.5-16k": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 8.2,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 16.2,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 4.7,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 35.0,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 4.4,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 24.4,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 5.2,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 20.3,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 37.5,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 28.8,
+            "category": 1
+        }
+    ],
+    "vicuna-13b-v1.5": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 0.5,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 13.6,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 2.3,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 19.8,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 2.7,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 17.7,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 30.0,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 11.1,
+            "category": 1
+        }
+    ],
+    "Qwen-7B-Chat": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 25.7,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 3.5,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 11.1,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 60.0,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 3.7,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 13.2,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 16.3,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 14.1,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 7.5,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 22.8,
+            "category": 1
+        }
+    ],
+    "WizardLM_70B_V1dot0": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 21.3,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 42.0,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 34.2,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 15.0,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 0.1,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 13.6,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 43.8,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 26.8,
+            "category": 1
+        }
+    ],
+    "mpt-30b-instruct": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 20.4,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 8.4,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 33.8,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 15.7,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 23.8,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 7.8,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 22.7,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 4.9,
+            "category": 1
+        }
+    ],
+    "Mistral_7B_Instruct_v0dot1": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 15.6,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 16.8,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 19.1,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 10.5,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 46.4,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 2.5,
+            "category": 1
+        }
+    ],
+    "falcon-7b-instruct": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 12.5,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 5.7,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 10.0,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 11.3,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 12.8,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 9.9,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 4.5,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 36.2,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 18.4,
+            "category": 1
+        }
+    ],
+    "Platypus2-70B-instruct": [
+        {
+            "key": "Aware",
+            "value": 4.8,
+            "category": 0
+        },
+        {
+            "key": "Abnormal",
+            "value": 26.5,
+            "category": 0
+        },
+        {
+            "key": "Omission",
+            "value": 6.1,
+            "category": 0
+        },
+        {
+            "key": "Late Cause",
+            "value": 18.4,
+            "category": 0
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.5,
+            "category": 0
+        },
+        {
+            "key": "Unaware",
+            "value": 3.9,
+            "category": 0
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Action",
+            "value": 1.0,
+            "category": 0
+        },
+        {
+            "key": "Early Cause",
+            "value": 4.4,
+            "category": 0
+        },
+        {
+            "key": "Statistical",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Aware",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Abnormal",
+            "value": 35.9,
+            "category": 1
+        },
+        {
+            "key": "Omission",
+            "value": 1.0,
+            "category": 1
+        },
+        {
+            "key": "Late Cause",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Prescriptive",
+            "value": 12.9,
+            "category": 1
+        },
+        {
+            "key": "Unaware",
+            "value": 49.4,
+            "category": 1
+        },
+        {
+            "key": "Normal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Action",
+            "value": 19.4,
+            "category": 1
+        },
+        {
+            "key": "Early Cause",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Statistical",
+            "value": 15.7,
+            "category": 1
+        }
+    ]
+};
+
+moral_data = {
+    "gpt-4": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 33.3,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 20.0,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 45.0,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 13.8,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 11.1,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 21.3,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 62.5,
+            "category": 1
+        }
+    ],
+    "gpt-3.5-turbo": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 38.5,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 10.3,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 13.3,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 16.7,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 14.7,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 9.0,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 26.2,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 35.5,
+            "category": 1
+        }
+    ],
+    "text-babbage-001": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 2.0,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 5.5,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 7.6,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 7.4,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 6.6,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 3.7,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 9.6,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 3.6,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 2.1,
+            "category": 1
+        }
+    ],
+    "text-curie-001": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 7.4,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 8.6,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 3.6,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 11.0,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 23.5,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 5.0,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 4.1,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 10.2,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 1.0,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 23.6,
+            "category": 1
+        }
+    ],
+    "text-davinci-002": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 15.1,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 28.2,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 4.4,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 19.8,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 2.8,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 17.9,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 16.3,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 4.5,
+            "category": 1
+        }
+    ],
+    "text-davinci-003": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 14.0,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 10.2,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 6.7,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 5.4,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 10.0,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 11.6,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 23.2,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 0.2,
+            "category": 1
+        }
+    ],
+    "claude-v1": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 8.3,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 15.6,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 22.7,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 9.2,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 16.7,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 9.5,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 5.6,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 9.0,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 14.7,
+            "category": 1
+        }
+    ],
+    "llama-2-7b-chat": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 2.5,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 2.9,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 3.1,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 2.9,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 0.0,
+            "category": 1
+        }
+    ],
+    "llama-2-13b-chat": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 3.2,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 0.3,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 1.2,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 12.5,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 8.4,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 16.7,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 10.8,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 10.8,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 20.9,
+            "category": 1
+        }
+    ],
+    "llama-2-70b-chat": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 7.3,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 5.3,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 2.8,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 4.9,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 18.8,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 1.4,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 3.1,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 1.0,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 0.0,
+            "category": 1
+        }
+    ],
+    "vicuna-13b-v1.5-16k": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 14.6,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 10.3,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 3.2,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 11.0,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 8.1,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 10.2,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 7.6,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 29.2,
+            "category": 1
+        }
+    ],
+    "vicuna-13b-v1.5": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 16.7,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.6,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 9.1,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 39.7,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 4.2,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 5.5,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 15.7,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 30.4,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 23.0,
+            "category": 1
+        }
+    ],
+    "Qwen-7B-Chat": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 24.0,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 8.9,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 9.7,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 11.1,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 22.9,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 10.3,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 9.9,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 6.4,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 18.9,
+            "category": 1
+        }
+    ],
+    "WizardLM_70B_V1dot0": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 24.0,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 29.2,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 16.4,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 1.8,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 27.1,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 4.2,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 7.6,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 20.6,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 25.0,
+            "category": 1
+        }
+    ],
+    "mpt-30b-instruct": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 14.6,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 6.8,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 15.4,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 14.6,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 10.5,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 14.2,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 6.9,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 34.4,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 22.9,
+            "category": 1
+        }
+    ],
+    "Mistral_7B_Instruct_v0dot1": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 7.3,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 16.1,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 11.5,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 8.4,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 45.9,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 8.4,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 3.1,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 4.3,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 6.5,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 0.0,
+            "category": 1
+        }
+    ],
+    "falcon-7b-instruct": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 25.0,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 18.9,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 7.9,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 7.1,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 23.0,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 2.1,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 3.9,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 13.5,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 11.9,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 27.2,
+            "category": 1
+        }
+    ],
+    "Platypus2-70B-instruct": [
+        {
+            "key": "Impersonal",
+            "value": 10.7,
+            "category": 0
+        },
+        {
+            "key": "Side Effect",
+            "value": 17.2,
+            "category": 0
+        },
+        {
+            "key": "Inevitable",
+            "value": 17.5,
+            "category": 0
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Patient",
+            "value": 14.0,
+            "category": 0
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Means",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 0.0,
+            "category": 0
+        },
+        {
+            "key": "Agent",
+            "value": 7.3,
+            "category": 0
+        },
+        {
+            "key": "Impersonal",
+            "value": 32.3,
+            "category": 1
+        },
+        {
+            "key": "Side Effect",
+            "value": 14.5,
+            "category": 1
+        },
+        {
+            "key": "Inevitable",
+            "value": 24.2,
+            "category": 1
+        },
+        {
+            "key": "Self-beneficial",
+            "value": 2.5,
+            "category": 1
+        },
+        {
+            "key": "Patient",
+            "value": 33.4,
+            "category": 1
+        },
+        {
+            "key": "Personal",
+            "value": 0.0,
+            "category": 1
+        },
+        {
+            "key": "Means",
+            "value": 10.6,
+            "category": 1
+        },
+        {
+            "key": "Avoidable",
+            "value": 0.2,
+            "category": 1
+        },
+        {
+            "key": "Other-beneficial",
+            "value": 23.2,
+            "category": 1
+        },
+        {
+            "key": "Agent",
+            "value": 2.3,
+            "category": 1
+        }
+    ]
+};
+
 	function chooseVegaData(model_name) {
 		console.log(model_name);
+		vega_spyder_demo_data["data"][0] = {"name": "table", "values": causal_data[model_name]};
+		return vega_spyder_demo_data;
 	}
-    var vega_spyder_demo_data = {
-						"$schema": "https://vega.github.io/schema/vega/v5.json",
-						"description": "A radar chart example, showing multiple dimensions in a radial layout.",
-						"width": 400,
-						"height": 400,
-						"padding": 40,
-						"autosize": {"type": "none", "contains": "padding"},
 
-						"signals": [
-							{"name": "radius", "update": "width / 2"}
-						],
+	function chooseVegaMoralData(model_name) {
+		vega_spyder_moral_data["data"][0] = {"name": "table", "values": moral_data[model_name]};
+		return vega_spyder_moral_data;
+	}
 
-						"data": [
-							{
-							"name": "table",
-							"values": [
-								{"key": "key-0", "value": 19, "category": 0},
-								{"key": "key-1", "value": 22, "category": 0},
-								{"key": "key-2", "value": 14, "category": 0},
-								{"key": "key-3", "value": 38, "category": 0},
-								{"key": "key-4", "value": 23, "category": 0},
-								{"key": "key-5", "value": 5, "category": 0},
-								{"key": "key-6", "value": 27, "category": 0},
-								{"key": "key-0", "value": 13, "category": 1},
-								{"key": "key-1", "value": 12, "category": 1},
-								{"key": "key-2", "value": 42, "category": 1},
-								{"key": "key-3", "value": 13, "category": 1},
-								{"key": "key-4", "value": 6, "category": 1},
-								{"key": "key-5", "value": 15, "category": 1},
-								{"key": "key-6", "value": 8, "category": 1}
-							]
-							},
-							{
-							"name": "keys",
-							"source": "table",
-							"transform": [
-								{
-								"type": "aggregate",
-								"groupby": ["key"]
-								}
-							]
-							}
-						],
+var vega_spyder_demo_data = {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": {
+    "text": "Causal Implicit Tendencies",
+    "anchor": "start", // can be "start", "middle", or "end"
+    "fontSize": 20,
+    "font": "sans-serif",
+    "offset": 25, // space between the title and the top of the chart
+    "color": "black",
+  },
+  "description": "A radar chart example, showing multiple dimensions in a radial layout.",
+  "width": 500,
+  "height": 500,
+  "padding": 75,
+  "autosize": {"type": "none", "contains": "padding"},
+  
 
-						"scales": [
-							{
-							"name": "angular",
-							"type": "point",
-							"range": {"signal": "[-PI, PI]"},
-							"padding": 0.5,
-							"domain": {"data": "table", "field": "key"}
-							},
-							{
-							"name": "radial",
-							"type": "linear",
-							"range": {"signal": "[0, radius]"},
-							"zero": true,
-							"nice": false,
-							"domain": {"data": "table", "field": "value"},
-							"domainMin": 0
-							},
-							{
-							"name": "color",
-							"type": "ordinal",
-							"domain": {"data": "table", "field": "category"},
-							"range": {"scheme": "category10"}
-							}
-						],
+  "signals": [
+    {"name": "radius", "update": "width / 2"}
+  ],
 
-						"encode": {
-							"enter": {
-							"x": {"signal": "radius"},
-							"y": {"signal": "radius"}
-							}
-						},
+  "data": [
+    {
+      "name": "table",
+      "values": causal_data["gpt-4"]
+    },
+    {
+      "name": "keys",
+      "source": "table",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["key"]
+        }
+      ]
+    }
+  ],
 
-						"marks": [
-							{
-							"type": "group",
-							"name": "categories",
-							"zindex": 1,
-							"from": {
-								"facet": {"data": "table", "name": "facet", "groupby": ["category"]}
-							},
-							"marks": [
-								{
-								"type": "line",
-								"name": "category-line",
-								"from": {"data": "facet"},
-								"encode": {
-									"enter": {
-									"interpolate": {"value": "linear-closed"},
-									"x": {"signal": "scale('radial', datum.value) * cos(scale('angular', datum.key))"},
-									"y": {"signal": "scale('radial', datum.value) * sin(scale('angular', datum.key))"},
-									"stroke": {"scale": "color", "field": "category"},
-									"strokeWidth": {"value": 1},
-									"fill": {"scale": "color", "field": "category"},
-									"fillOpacity": {"value": 0.1}
-									}
-								}
-								},
-								{
-								"type": "text",
-								"name": "value-text",
-								"from": {"data": "category-line"},
-								"encode": {
-									"enter": {
-									"x": {"signal": "datum.x"},
-									"y": {"signal": "datum.y"},
-									"text": {"signal": "datum.datum.value"},
-									"align": {"value": "center"},
-									"baseline": {"value": "middle"},
-									"fill": {"value": "black"}
-									}
-								}
-								}
-							]
-							},
-							{
-							"type": "rule",
-							"name": "radial-grid",
-							"from": {"data": "keys"},
-							"zindex": 0,
-							"encode": {
-								"enter": {
-								"x": {"value": 0},
-								"y": {"value": 0},
-								"x2": {"signal": "radius * cos(scale('angular', datum.key))"},
-								"y2": {"signal": "radius * sin(scale('angular', datum.key))"},
-								"stroke": {"value": "lightgray"},
-								"strokeWidth": {"value": 1}
-								}
-							}
-							},
-							{
-							"type": "text",
-							"name": "key-label",
-							"from": {"data": "keys"},
-							"zindex": 1,
-							"encode": {
-								"enter": {
-								"x": {"signal": "(radius + 5) * cos(scale('angular', datum.key))"},
-								"y": {"signal": "(radius + 5) * sin(scale('angular', datum.key))"},
-								"text": {"field": "key"},
-								"align": [
-									{
-									"test": "abs(scale('angular', datum.key)) > PI / 2",
-									"value": "right"
-									},
-									{
-									"value": "left"
-									}
-								],
-								"baseline": [
-									{
-									"test": "scale('angular', datum.key) > 0", "value": "top"
-									},
-									{
-									"test": "scale('angular', datum.key) == 0", "value": "middle"
-									},
-									{
-									"value": "bottom"
-									}
-								],
-								"fill": {"value": "black"},
-								"fontWeight": {"value": "bold"}
-								}
-							}
-							},
-							{
-							"type": "line",
-							"name": "outer-line",
-							"from": {"data": "radial-grid"},
-							"encode": {
-								"enter": {
-								"interpolate": {"value": "linear-closed"},
-								"x": {"field": "x2"},
-								"y": {"field": "y2"},
-								"stroke": {"value": "lightgray"},
-								"strokeWidth": {"value": 1}
-								}
-							}
-							}
-						]
-						};
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0.5,
+      "domain": {"data": "table", "field": "key"}
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": {"signal": "[0, radius]"},
+      "zero": true,
+      "nice": false,
+      "domain": {"data": "table", "field": "value"},
+      "domainMin": 0
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "category"},
+      "range": {"scheme": "category10"}
+    }
+  ],
+
+  "encode": {
+    "enter": {
+      "x": {"signal": "radius"},
+      "y": {"signal": "radius"}
+    }
+  },
+
+  "marks": [
+    {
+      "type": "group",
+      "name": "categories",
+      "zindex": 1,
+      "from": {
+        "facet": {"data": "table", "name": "facet", "groupby": ["category"]}
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "category-line",
+          "from": {"data": "facet"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {"signal": "scale('radial', datum.value) * cos(scale('angular', datum.key))"},
+              "y": {"signal": "scale('radial', datum.value) * sin(scale('angular', datum.key))"},
+              "stroke": {"scale": "color", "field": "category"},
+              "strokeWidth": {"value": 1},
+              "fill": {"scale": "color", "field": "category"},
+              "fillOpacity": {"value": 0.1}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "value-text",
+          "from": {"data": "category-line"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "datum.x"},
+              "y": {"signal": "datum.y"},
+              "text": {
+                  "signal": "datum.datum.value"
+                },
+              "align": {"value": "center"},
+              "baseline": {"value": "middle"},
+              "fill": {"value": "black"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": {"data": "keys"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius * cos(scale('angular', datum.key))"},
+          "y2": {"signal": "radius * sin(scale('angular', datum.key))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "key-label",
+      "from": {"data": "keys"},
+      "zindex": 1,
+      "encode": {
+        "enter": {
+          "x": {"signal": "(radius + 5) * cos(scale('angular', datum.key))"},
+          "y": {"signal": "(radius + 5) * sin(scale('angular', datum.key))"},
+          "text": {"field": "key"},
+          "align": [
+            {
+              "test": "abs(scale('angular', datum.key)) > PI / 2",
+              "value": "right"
+            },
+            {
+              "value": "left"
+            }
+          ],
+          "baseline": [
+            {
+              "test": "scale('angular', datum.key) > 0", "value": "top"
+            },
+            {
+              "test": "scale('angular', datum.key) == 0", "value": "middle"
+            },
+            {
+              "value": "bottom"
+            }
+          ],
+          "fill": {"value": "black"},
+          "fontWeight": {"value": "bold"},
+          "fontSize": {"value": 14},
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    }
+  ]
+};
+
+var vega_spyder_moral_data = {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": {
+    "text": "Moral Implicit Tendencies",
+    "anchor": "start", // can be "start", "middle", or "end"
+    "fontSize": 20,
+    "font": "sans-serif",
+    "offset": 25, // space between the title and the top of the chart
+    "color": "black",
+  },
+  "description": "A radar chart example, showing multiple dimensions in a radial layout.",
+  "width": 500,
+  "height": 500,
+  "padding": 75,
+  "autosize": {"type": "none", "contains": "padding"},
+  
+
+  "signals": [
+    {"name": "radius", "update": "width / 2"}
+  ],
+
+  "data": [
+    {
+      "name": "table",
+      "values": moral_data["gpt-4"]
+    },
+    {
+      "name": "keys",
+      "source": "table",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["key"]
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0.5,
+      "domain": {"data": "table", "field": "key"}
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": {"signal": "[0, radius]"},
+      "zero": true,
+      "nice": false,
+      "domain": {"data": "table", "field": "value"},
+      "domainMin": 0
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "category"},
+      "range": {"scheme": "category10"}
+    }
+  ],
+
+  "encode": {
+    "enter": {
+      "x": {"signal": "radius"},
+      "y": {"signal": "radius"}
+    }
+  },
+
+  "marks": [
+    {
+      "type": "group",
+      "name": "categories",
+      "zindex": 1,
+      "from": {
+        "facet": {"data": "table", "name": "facet", "groupby": ["category"]}
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "category-line",
+          "from": {"data": "facet"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {"signal": "scale('radial', datum.value) * cos(scale('angular', datum.key))"},
+              "y": {"signal": "scale('radial', datum.value) * sin(scale('angular', datum.key))"},
+              "stroke": {"scale": "color", "field": "category"},
+              "strokeWidth": {"value": 1},
+              "fill": {"scale": "color", "field": "category"},
+              "fillOpacity": {"value": 0.1}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "name": "value-text",
+          "from": {"data": "category-line"},
+          "encode": {
+            "enter": {
+              "x": {"signal": "datum.x"},
+              "y": {"signal": "datum.y"},
+              "text": {
+                  "signal": "datum.datum.value"
+                },
+              "align": {"value": "center"},
+              "baseline": {"value": "middle"},
+              "fill": {"value": "black"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": {"data": "keys"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius * cos(scale('angular', datum.key))"},
+          "y2": {"signal": "radius * sin(scale('angular', datum.key))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "key-label",
+      "from": {"data": "keys"},
+      "zindex": 1,
+      "encode": {
+        "enter": {
+          "x": {"signal": "(radius + 5) * cos(scale('angular', datum.key))"},
+          "y": {"signal": "(radius + 5) * sin(scale('angular', datum.key))"},
+          "text": {"field": "key"},
+          "align": [
+            {
+              "test": "abs(scale('angular', datum.key)) > PI / 2",
+              "value": "right"
+            },
+            {
+              "value": "left"
+            }
+          ],
+          "baseline": [
+            {
+              "test": "scale('angular', datum.key) > 0", "value": "top"
+            },
+            {
+              "test": "scale('angular', datum.key) == 0", "value": "middle"
+            },
+            {
+              "value": "bottom"
+            }
+          ],
+          "fill": {"value": "black"},
+          "fontWeight": {"value": "bold"},
+          "fontSize": {"value": 14},
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    }
+  ]
+};
+
+
 </script>

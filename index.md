@@ -917,4 +917,9 @@ We present both **Causal Judgment Task** (Left Table) and **Moral Permissibility
 
 ## Implicit Alignment
 
-Check out the implicit tendencies of LLMs and how they compare to human tendencies.
+In the previous section, we focus on analyzing aggregate metrics such as agreement over all stories. Such analysis often provides no information beyond comparing highly complicated systems with a single number. 
+Since each of our stories is a combination of factors with corresponding attributes, we can leverage conjoint analysis and compute the Average Marginal Component Effect (AMCE) for each factor attribute, where AMCE reveals the implicit tendency of the underlying system when a particular attribute is present.
+
+AMCE computes a score that indicates an **implicit preference**. We put the attributes of the same factor (e.g., Abnormal and Normal are the two attributes under factor "Event Normality") on opposite sides -- since the preference is over one attribute or the other. Each concentric circle is marked with a probability (e.g., 0.1), which represents the change in `P(Yes)` if the factor attribute had been present in the story. The implicit tendency is defined as the expected change in the probability of the system outputting `Yes` if this attribute had been present in the story.  Intuitively, we can say a model has an implicit tendency for one attribute when it’s more likely to judge an event to be the cause, or the impending harm to be more morally permissible, if this attribute is present.
+
+The radar plot shows not just the mean AMCE score, but the 95% confidence interval of the AMCE score. Since AMCE score is the difference in probability change, if the upper/lower bound of confidence interval crosses 0, it means we are not able to determine the tendency given the current data. The confidence interval is computed through Bootstrap.

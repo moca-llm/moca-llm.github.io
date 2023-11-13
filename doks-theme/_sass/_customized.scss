@@ -45,3 +45,32 @@
 .has-border {
     background-color: #6eb7ff;
 }
+
+.list-group-item, .list-group-item-highlight {
+    transition: background-color 0.5s ease, color 0.5s ease;
+    /* Other styles */
+}
+
+.vega-vis {
+    margin-top: 20px;
+}
+
+.swatch {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.swatch div[title] {
+    border: 1px solid #ddd;
+}
+.swatch div {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid white;
+}
+
+.full-model-list {
+    margin-top: 15px;
+}

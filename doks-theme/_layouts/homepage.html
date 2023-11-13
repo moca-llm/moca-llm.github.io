@@ -143,19 +143,99 @@
 						</div><!-- /.content -->
 
 						<div class="row">
-							<div class="col-md-6">
-								<!-- <h4>List of LLMs</h4> -->
-								<p>List of LLMs:</p>
-								<ul class="list-group" id="model_list">
-									<li class="list-group-item" id="gpt-4">GPT-4</li>
-									<li class="list-group-item" id="gpt-3.5">A second item</li>
-								  </ul>
+							<div class="row justify-content-center full-model-list">
+							<div class="col-md-11">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-group" id="model_list">
+											<li class="list-group-item" id="gpt-4">gpt-4</li>
+											<li class="list-group-item" id="gpt-3.5-turbo">gpt-3.5-turbo</li>
+											<li class="list-group-item" id="text-babbage-001">text-babbage-001</li>
+										</ul>
+									</div>
+									<div class="col-md-4">
+										<ul class="list-group">
+											<li class="list-group-item" id="text-curie-001">text-curie-001</li>
+											<li class="list-group-item" id="text-davinci-002">text-davinci-002</li>
+											<li class="list-group-item" id="text-davinci-003">text-davinci-003</li>
+										</ul>
+									</div>
+									<div class="col-md-4">
+										<ul class="list-group">
+											<li class="list-group-item" id="claude-v1">claude-v1</li>
+											<li class="list-group-item" id="llama-2-7b-chat">llama-2-7b-chat</li>
+											<li class="list-group-item" id="llama-2-13b-chat">llama-2-13b-chat</li>
+										</ul>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-group">
+											<li class="list-group-item" id="llama-2-70b-chat">llama-2-70b-chat</li>
+											<li class="list-group-item" id="vicuna-13b-v1.5-16k">vicuna-13b-v1.5-16k</li>
+											<li class="list-group-item" id="vicuna-13b-v1.5">vicuna-13b-v1.5</li>
+										</ul>
+									</div>
+									<div class="col-md-4">
+										<ul class="list-group">
+											<li class="list-group-item" id="Qwen-7B-Chat">Qwen-7B-Chat</li>
+											<li class="list-group-item" id="WizardLM_70B_V1dot0">WizardLM_70B_V1dot0</li>
+											<li class="list-group-item" id="mpt-30b-instruct">mpt-30b-instruct</li>
+										</ul>
+									</div>
+									<div class="col-md-4">
+										<ul class="list-group">
+											<li class="list-group-item" id="Mistral_7B_Instruct_v0dot1">Mistral_7B_Instruct_v0dot1</li>
+											<li class="list-group-item" id="falcon-7b-instruct">falcon-7b-instruct</li>
+											<li class="list-group-item" id="Platypus2-70B-instruct">Platypus2-70B-instruct</li>
+										</ul>
+									</div>
+								</div>
 							</div>
-							<div class="col-md-6">
-								<div id="vis"></div>
+						</div>
+
+							<div class="row vega-vis">
+								<div class="row justify-content-center">
+									<div class="'col-md-11">
+										<div class="swatch">
+											<div title="#1f77b4" style="background: rgb(31, 119, 180);"></div>&nbsp; <b>Human</b>
+											&nbsp;&nbsp;<div title="#ff7f0e" style="background: rgb(255, 127, 14);"></div>&nbsp;<b>Model</b>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-5">
+									<div id="visCausal"></div>
+								</div>
+								<div class="col-md-offset-1 col-md-5">
+									<div id="visMoral"></div>
+								</div>
 							</div>
+
+							<div class="row justify-content-center">
+								<div class="col-md-11">
+									<div class="content">
+									<p>We will use Moral Judgment Task as an example. Humans have an implicit tendency to be <b>self-beneficial</b>. The AMCE score for this tendency is 14%.
+										This means when <b>self-beneficial</b> is an attribute present in the story, humans are more likely to say an act of harm to be morally permissible compared to when `other-beneficial`
+										is present in the story. Generally, this means that when judging what act is morally permissible, people want to prefer acts that will benefit themselves.</p>
+										<p>This, however, is not true with <b>gpt-4</b> and <b>gpt-3.5-turbo</b>. <b>gpt-4</b> does not have a clear tendency between the two attributes. We can see this 
+											because the orange line reaches 21.3% on <b>Other-beneficial</b> and 13.8% on <b>Self-beneficial</b>. This means the confidence interval crossed 0.
+											However, for <b>gpt-3.5-turbo</b>, we see the orange line reaches 26.2% on <b>Other-beneficial</b>. This means <b>gpt-3.5-turbo</b> has an implicit tendency that is quite different from the 
+											average humans.
+										</p>
+									</div>
+								</div>
+							</div>
+							
 						</div>						
-		
+					
+					<!-- <div class="'col-md-11">
+						<div class="content">
+							<h2 id="team">Contributors</h2>
+							<p>Teams!</p>
+						</div>
+					</div> -->
+					
 					</div><!-- /.col -->
 
 					<div class="col-md-1">
@@ -174,7 +254,7 @@
 		<script>
 			$(document).ready(function() {
 				// Attach a click event listener to each LI element
-				$('#model_list').on('click', 'li', function() {
+				$('.list-group-item').on('click', function() {
 					console.log($(this).text(), this.id); // Log the text content of the clicked LI element
 					// Remove the highlight class from all other list items
 					$('.list-group-item').removeClass('list-group-item-highlight');
@@ -182,15 +262,25 @@
 					$(this).addClass('list-group-item-highlight');
 					var clickedItemId = this.id;
 					// Call the handleItemClick function with the ID as an argument
-					chooseVegaData(clickedItemId);
+					var vlSpec = chooseVegaData(clickedItemId);
+
+					// Embed the visualization in the container with id `vis`
+					vegaEmbed('#visCausal', vlSpec);
+
+					var vlSpec2 = chooseVegaMoralData(clickedItemId);
+					vegaEmbed('#visMoral', vlSpec2);
 				});
+
+				$('#model_list > li:first').addClass('list-group-item-highlight');
 			});
 
 			// Assign the specification to a local variable vlSpec.
 			var vlSpec = vega_spyder_demo_data;
+			var vlSpec2 = vega_spyder_moral_data;
 
 			// Embed the visualization in the container with id `vis`
-			vegaEmbed('#vis', vlSpec);
+			vegaEmbed('#visCausal', vlSpec);
+			vegaEmbed('#visMoral', vlSpec2);
 		</script>
 
 	</body>
