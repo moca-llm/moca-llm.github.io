@@ -209,13 +209,13 @@ em {
 table {
     border-collapse: collapse;
     margin: 0 0;
-    font-size: 0.85em;
+    font-size: 0.9em;
     font-family: sans-serif;
     padding: 0.1em 0.1em 0.1em 0.1em;
     min-width: 200px;
 }
 
-table th, .table td {
+table th, table td {
     padding: 4px 6px;
     border-width: 0px;
     text-transform: none;

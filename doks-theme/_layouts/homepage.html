@@ -229,12 +229,33 @@
 							
 						</div>						
 					
-					<!-- <div class="'col-md-11">
-						<div class="content">
-							<h2 id="team">Contributors</h2>
-							<p>Teams!</p>
+					<div class="row">
+						<div class="'col-md-11">
+							<div class="content">
+								<h2 id="Discussion">Discussion</h2>
+								<p>We summarize our high-level findings here:</p>
+								<ol>
+									<li><b>Non-monotonicity</b>: The alignment to human biases does not necessarily increase with model
+										size. We speculate that alignment is an area where the inverse scaling law applies (McKenzie
+										et al., 2023).</li>
+									<li><b>Heterogeneity</b>: Interestingly, but perhaps not surprisingly, models that used the same training
+										method and fine-tuned for human preferences do not have the same implicit tendencies. We
+										highlight the difference between Claude-v1 and GPT3.5-turbo.</li>
+									<li><b>Self-Tendency vs. Other-Preference</b>: Humans are ego-centric and often make self-beneficial
+										decisions. However, when asked to judge the behaviors of others, we prefer others to be altruistic.
+										For example, in scenarios involving self-driving cars, Kallioinen et al. (2019) reported a stark
+										contrast between what we tend to do versus what we want other people to do. This difference
+										will make models trained on human preferences through RLHF different from how humans
+										would tend to act in a given situation. As it is more prevalent to use LLMs as proxy humans
+										for data labeling or experiments (Dillion et al., 2023; Gilardi et al., 2023), it is increasingly
+										important to understand and measure these implicit differences.</li>
+								</ol>
+								<!-- <h2 id="team">Contributors</h2>
+								<p>Teams!</p> -->
+							</div>
 						</div>
-					</div> -->
+					</div>
+					
 					
 					</div><!-- /.col -->
 
