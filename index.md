@@ -15,8 +15,16 @@ buttons:
       url: 'https://github.com/cicl-stanford/moca'
       external_url: true
     - icon:
-      content: Contact
-      url: "mailto:moca.llm.help@gmail.com"
+      content: Causal Stories
+      url: "/causal_stories/1"
+      external_url: false
+    - icon:
+      content: Moral Stories
+      url: "/moral_stories/1"
+      external_url: false
+    # - icon:
+    #   content: Contact
+    #   url: "mailto:moca.llm.help@gmail.com"
 
 authors:
   - title: Allen Nie
@@ -102,7 +110,7 @@ Each story is annotated with latent factors that can help us detect implicit ten
 ![](./images/factor.png)
 **Factors:** Factors that influence causal selection judgments (top) and moral permissibility judgments (bottom). We provide definitions for each factor in Appendix A.1 and Appendix A.2. See the full version in Table A1.
 
-Click the following links to view more stories in our dataset:
+**Click the following links to view more stories in our dataset:**
 
 <div class="row">
   <div class="col-sm-6 col-lg-4">
@@ -117,7 +125,7 @@ Click the following links to view more stories in our dataset:
       </p>
     </a><!-- /.nav-grid__item -->
   </div><!-- /.col -->
-    <div class="col-sm-6 col-lg-4 col-md-offset-1">
+    <div class="col-sm-6 col-lg-4">
     <a href="https://moca-llm.github.io/moral_stories/1/" class="nav-grid__item">
       <div class="nav-grid__content" data-mh>
         <h2 class="nav-grid__title">Moral Stories</h2>
