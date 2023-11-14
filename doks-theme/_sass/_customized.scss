@@ -177,7 +177,7 @@
 .side-table {
     display: inline-block; 
 
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: $screen-sm-max) {
 		margin-left: 50px;
 	}
 }
