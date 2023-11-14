@@ -102,6 +102,35 @@ Each story is annotated with latent factors that can help us detect implicit ten
 ![](./images/factor.png)
 **Factors:** Factors that influence causal selection judgments (top) and moral permissibility judgments (bottom). We provide definitions for each factor in Appendix A.1 and Appendix A.2. See the full version in Table A1.
 
+Click the following links to view more stories in our dataset:
+
+<div class="row">
+  <div class="col-sm-6 col-lg-4">
+    <a href="https://moca-llm.github.io/causal_stories/1/" class="nav-grid__item">
+      <div class="nav-grid__content" data-mh>
+        <h2 class="nav-grid__title">Causal Stories</h2>
+        <p>View actual stories from the dataset</p>
+      </div><!-- /.nav-grid__content -->
+      <p class="nav-grid__btn">
+        Visit
+        <i class="icon icon--arrow-right"></i>
+      </p>
+    </a><!-- /.nav-grid__item -->
+  </div><!-- /.col -->
+    <div class="col-sm-6 col-lg-4 col-md-offset-1">
+    <a href="https://moca-llm.github.io/moral_stories/1/" class="nav-grid__item">
+      <div class="nav-grid__content" data-mh>
+        <h2 class="nav-grid__title">Moral Stories</h2>
+        <p>View actual stories from the dataset</p>
+      </div><!-- /.nav-grid__content -->
+      <p class="nav-grid__btn">
+        Visit
+        <i class="icon icon--arrow-right"></i>
+      </p>
+    </a><!-- /.nav-grid__item -->
+  </div><!-- /.col -->
+</div><!-- /.row -->
+
 ## Main Result
 
 We conduct a 3-class comparison to compute accuracy: a response of "Yes", "No", and an additional response of "ambiguous" when the agreement between the average human responses or the probability of model output is 50% &plusmn; 10%. This gives us a discrete agreement (Agg) between the model and participants. We also report AuROC between the model's output and the distribution of human answering yes or no. Additionally, we report the absolute-mean-squared error (MAE) on the probability of the matched label.
