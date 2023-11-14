@@ -18,13 +18,6 @@ buttons:
       content: Contact
       url: "mailto:moca.llm.help@gmail.com"
 
-# Author box
-# author:
-#     title: Allen Nie
-#     title_url: "https://anie.me/"
-#     external_url: true
-#     indicator: 1
-
 authors:
   - title: Allen Nie
     title_url: "https://anie.me/"
@@ -113,7 +106,7 @@ Each story is annotated with latent factors that can help us detect implicit ten
 
 We conduct a 3-class comparison to compute accuracy: a response of "Yes", "No", and an additional response of "ambiguous" when the agreement between the average human responses or the probability of model output is 50% &plusmn; 10%. This gives us a discrete agreement (Agg) between the model and participants. We also report AuROC between the model's output and the distribution of human answering yes or no. Additionally, we report the absolute-mean-squared error (MAE) on the probability of the matched label.
 
-We present both **Causal Judgment Task** (Left Table) and **Moral Permissibility Task** (Right Table), across chat-based LLMs and completion-based LLMs. 
+We present both **Causal Judgment Task** (Left Table) and **Moral Permissibility Task** (Right Table), across chat-based LLMs and completion-based LLMs. We separate models into chat models and completion models. For chat models, the prompt asks the LLMs to choose one of three labels `Yes`, `No`, 
 
 <h3>Chat Models</h3>
 
