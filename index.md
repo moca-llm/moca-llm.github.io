@@ -346,7 +346,7 @@ We present both **Causal Judgment Task** (Left Table) and **Moral Permissibility
   </tbody>
 </table>
 
-<table class="table-striped" style="display: inline-block; margin-left: 50px;">
+<table class="table-striped side-table">
   <thead>
     <tr>
       <th>Moral Permissibility Task<br />Model</th>
@@ -650,7 +650,7 @@ We present both **Causal Judgment Task** (Left Table) and **Moral Permissibility
   </tbody>
 </table>
 
-<table class="table-striped" style="display: inline-block; margin-left: 50px;">
+<table class="table-striped side-table">
   <thead>
     <tr>
       <th>Moral Permissibility Task<br />Model</th>

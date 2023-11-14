@@ -173,3 +173,11 @@
 .author-section {
     font-weight: 800;
 }
+
+.side-table {
+    display: inline-block; 
+
+    @media (min-width: $screen-sm-min) {
+		margin-left: 50px;
+	}
+}
