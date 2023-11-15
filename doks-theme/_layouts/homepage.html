@@ -219,22 +219,201 @@
 							<div class="row justify-content-center">
 								<div class="col-md-11">
 									<div class="content">
-									<p>We will use Moral Judgment Task as an example. Humans have an implicit tendency to be <b>self-beneficial</b>. The AMCE score for this tendency is 14%.
+									<p>We provide a summary of each model's alignment and misalignment with human implicit tendencies below. Note that we are only listing the alignment/misalignment if the AMCE score is significant (95% confidence interval does not cross 0).
+									If human and model have the <strong>same</strong> implicit tendency, we report the AMCE score in <span class="less-highlight">blue</span> if the difference is less than 10%. Otherwise, we report the score in <span class="more-highlight">red</span>.
+									If the human and model have the <strong>opposite</strong> implicit tendency, we report the AMCE score in <span class="more-highlight">red</span></p>
+									<!-- <p>We will use Moral Judgment Task as an example. Humans have an implicit tendency to be <b>self-beneficial</b>. The AMCE score for this tendency is 14%.
 										This means when <b>self-beneficial</b> is an attribute present in the story, humans are more likely to say an act of harm to be morally permissible compared to when `other-beneficial`
 										is present in the story. Generally, this means that when judging what act is morally permissible, people want to prefer acts that will benefit themselves.</p>
 										<p>This, however, is not true with <b>gpt-4</b> and <b>gpt-3.5-turbo</b>. <b>gpt-4</b> does not have a clear tendency between the two attributes. We can see this 
 											because the orange line reaches 21.3% on <b>Other-beneficial</b> and 13.8% on <b>Self-beneficial</b>. This means the confidence interval crossed 0.
 											However, for <b>gpt-3.5-turbo</b>, we see the orange line reaches 26.2% on <b>Other-beneficial</b>. This means <b>gpt-3.5-turbo</b> has an implicit tendency that is quite different from the 
 											average humans.
-										</p>
+										</p> -->
+									<p><strong>Implicit Causal Judgment Tendencies</strong></p>
+									<p id="model-statement"></p>
+									<p><strong>Implicit Moral Permissibility Tendencies</strong></p>
+									<p id="model-statement-moral"></p>
 									</div>
 								</div>
 							</div>
 							
-						</div>						
+						</div>				
 					
 					<div class="row">
-						<div class="'col-md-11">
+						<div class="col-md-11">
+							<div class="content">
+								<h2 id="factor-definition">Factor Definitions</h2>
+
+								<h3>Factors Related to Causal Judgments</h3>
+								<table>
+									<thead>
+									  <tr>
+										<th>Causal Factors</th>
+										<th>Definitions</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr class="shade-row">
+										<td><strong>Causal Structure</strong></td>
+										<td>Wells &amp; Gavanski, 1989; Mandel, 2003; Sloman &amp; Lagnado, 2015</td>
+									  </tr>
+									  <tr>
+										<td>Conjunctive</td>
+										<td>All events must happen in order for the outcome to occur. Each event is a necessary cause for the outcome.</td>
+									  </tr>
+									  <tr>
+										<td>Disjunctive</td>
+										<td>Any event will cause the outcome to occur. Each event is a sufficient cause for the outcome.</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Agent Awareness</strong></td>
+										<td>Samland et al., 2016; Kominsky &amp; Phillips, 2019</td>
+									  </tr>
+									  <tr>
+										<td>Aware</td>
+										<td>Agent is aware that their action will break the norm/rule or they know their action is “abnormal”.</td>
+									  </tr>
+									  <tr>
+										<td>Unaware</td>
+										<td>Agent is unaware or ignorant that their action will break the norm/rule, or they don’t know their action is “abnormal”.</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Norm Type</strong></td>
+										<td>Icard et al., 2017; N’gbala &amp; Branscombe, 1995; Kominsky et al., 2015; Sytsma, 2021</td>
+									  </tr>
+									  <tr>
+										<td>Prescriptive Norm</td>
+										<td>A norm about what is supposed to happen.</td>
+									  </tr>
+									  <tr>
+										<td>Statistical Norm</td>
+										<td>A norm about what tends to happen.</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Event Normality</strong></td>
+										<td>Knobe &amp; Fraser, 2008; Hitchcock &amp; Knobe, 2009; Alicke et al., 2011; O’Neill et al., 2021; Morris et al., 2019; Samland et al., 2016</td>
+									  </tr>
+									  <tr>
+										<td>Normal Event</td>
+										<td>The event that led to the outcome is considered “normal”.</td>
+									  </tr>
+									  <tr>
+										<td>Abnormal Event</td>
+										<td>The event that led to the outcome is considered “abnormal/unexpected”.</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Action or Omission</strong></td>
+										<td>Ritov &amp; Baron, 1992; Baron &amp; Ritov, 2004; Henne et al., 2017, 2021; Clarke et al., 2015; DeScioli et al., 2011; Gerstenberg &amp; Stephan, 2021</td>
+									  </tr>
+									  <tr>
+										<td>Action as Cause</td>
+										<td>Agent performed an action that led to the outcome.</td>
+									  </tr>
+									  <tr>
+										<td>Omission as Cause</td>
+										<td>Agent did not perform the action, and the omission led to the outcome.</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Time</strong></td>
+										<td>Reuter et al., 2014; Henne et al., 2021</td>
+									  </tr>
+									  <tr>
+										<td>Early</td>
+										<td>The event happened early.</td>
+									  </tr>
+									  <tr>
+										<td>Late</td>
+										<td>The event happened late.</td>
+									  </tr>
+									  <tr>
+										<td>Same Time</td>
+										<td>Multiple events happened at the same time.</td>
+									  </tr>
+									</tbody>
+								  </table>
+
+								  <h3>Factors Related to Moral Permissibility</h3>
+								  
+								  <table>
+									<thead>
+									  <tr>
+										<th>Factors</th>
+										<th>Definitions</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr class="shade-row">
+										<td><strong>Beneficence</strong></td>
+										<td>Bloomfield, 2007; Christensen et al., 2014; Wiegmann et al., 2012</td>
+									  </tr>
+									  <tr>
+										<td>Self-Beneficial</td>
+										<td>The agent themself benefits from their action.</td>
+									  </tr>
+									  <tr>
+										<td>Other-Beneficial</td>
+										<td>Only other people benefit from the agent’s action.</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Personal Force</strong></td>
+										<td>Christensen et al., 2014; Wiegmann et al., 2012</td>
+									  </tr>
+									  <tr>
+										<td>Personal</td>
+										<td>Agent is directly involved in the production of the harm.</td>
+									  </tr>
+									  <tr>
+										<td>Impersonal</td>
+										<td>Agent is only indirectly involved in the process that results in the harm (e.g., using a device).</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Counterfactual Evitability</strong></td>
+										<td>Moore, 2008; Huebner et al., 2011; Christensen et al., 2014; Wiegmann et al., 2012</td>
+									  </tr>
+									  <tr>
+										<td>Avoidable</td>
+										<td>The harm would not have occurred if the agent hadn’t acted.</td>
+									  </tr>
+									  <tr>
+										<td>Inevitable</td>
+										<td>The harm would have occurred even if the agent hadn’t acted.</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Causal Role</strong></td>
+										<td>Hauser, 2006; Christensen et al., 2014; Wiegmann et al., 2012</td>
+									  </tr>
+									  <tr>
+										<td>Means</td>
+										<td>The harm is instrumental/necessary to produce the outcome.</td>
+									  </tr>
+									  <tr>
+										<td>Side Effect</td>
+										<td>The harm happens as a side-effect of the agent’s action, unnecessary to produce the outcome.</td>
+									  </tr>
+									  <tr class="shade-row">
+										<td><strong>Locus of Intervention</strong></td>
+										<td>Waldmann &amp; Dieterich, 2007</td>
+									  </tr>
+									  <tr>
+										<td>Instrument of Harm</td>
+										<td>The intervention is directed at the instrument of harm (e.g., the runaway train, the hijacked airplane).</td>
+									  </tr>
+									  <tr>
+										<td>Patient of Harm</td>
+										<td>The intervention is directed at the patient of harm (e.g., the workers on the train track).</td>
+									  </tr>
+									</tbody>
+								  </table>	
+								  <br>
+								  <p>We also provide a full explanation of each factor in the Appendix of the paper.</p>
+							  
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-11">
 							<div class="content">
 								<h2 id="Discussion">Discussion</h2>
 								<p>We summarize our high-level findings here:</p>
@@ -261,8 +440,10 @@
 									also like to thank Jon Gauthier, Nicholas Tomlin, Matthew Jorke, Xuechen Li, Rose E
 									Wang, and Dora Demszky for general discussions. An earlier version of the dataset was submitted to
 									BigBench. We would like to thank the reviewers Marcelo Menegali, Adrià Garriga-Alonso, and Denis
-									Emelin for their comments and feedback. We thank May Khoo for data annotations and facilitation
-									of labeling. We thank Simon Lee Huang for his work to run experiments with Automated Prompt
+									Emelin for their comments and feedback. </p>
+									
+									<p>We thank May Khoo for data annotations and facilitation
+									of labeling. We thank <a href="https://www.simonh.io/"><u>Simon Lee Huang</u></a> for his work to run experiments with Automated Prompt
 									Engineer and Social Simulacra.</p>
 							</div>
 						</div>
@@ -302,6 +483,11 @@
 
 					var vlSpec2 = chooseVegaMoralData(clickedItemId);
 					vegaEmbed('#visMoral', vlSpec2);
+
+					// update text
+					$('#model-statement').html(model_alignment_statement_causal[this.id]);
+
+					$('#model-statement-moral').html(model_alignment_statement_moral[this.id]);
 				});
 
 				$('#model_list > li:first').addClass('list-group-item-highlight');
@@ -314,6 +500,10 @@
 			// Embed the visualization in the container with id `vis`
 			vegaEmbed('#visCausal', vlSpec);
 			vegaEmbed('#visMoral', vlSpec2);
+
+			$('#model-statement').html(model_alignment_statement_causal["gpt-4"]);
+
+					$('#model-statement-moral').html(model_alignment_statement_moral["gpt-4"]);
 		</script>
 
 	</body>
