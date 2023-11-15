@@ -219,9 +219,12 @@
 							<div class="row justify-content-center">
 								<div class="col-md-11">
 									<div class="content">
-									<p>We provide a summary of each model's alignment and misalignment with human implicit tendencies below. Note that we are only listing the alignment/misalignment if the AMCE score is significant (95% confidence interval does not cross 0).
-									If human and model have the <strong>same</strong> implicit tendency, we report the AMCE score in <span class="less-highlight">blue</span> if the difference is less than 10%. Otherwise, we report the score in <span class="more-highlight">red</span>.
-									If the human and model have the <strong>opposite</strong> implicit tendency, we report the AMCE score in <span class="more-highlight">red</span></p>
+									<p>We provide a summary of each model's alignment and misalignment with human implicit tendencies below. 
+                                        Note that we are only listing the alignment/misalignment if the AMCE score is significant (95% confidence interval does not cross 0).
+                                        The AMCE score we plot in the chart and report is the upper or lower bound on the 95% CI. We report this to signal maximal probable misalignment,
+                                        note that this is different from statistical significance test. Visit our code <a href="https://github.com/cicl-stanford/moca/tree/main"></a><u>repo</u> to conduct statistical significance test.
+										If human and model have implicit tendency in the <strong>same</strong> direction, we report the AMCE score in <span class="less-highlight">blue</span> if the maximal probable difference is less than 10%. Otherwise, we report the score in <span class="more-highlight">red</span>.
+										If the human and model have the <strong>opposite</strong> implicit tendency, we report the AMCE score in <span class="more-highlight">red</span></p>
 									<!-- <p>We will use Moral Judgment Task as an example. Humans have an implicit tendency to be <b>self-beneficial</b>. The AMCE score for this tendency is 14%.
 										This means when <b>self-beneficial</b> is an attribute present in the story, humans are more likely to say an act of harm to be morally permissible compared to when `other-beneficial`
 										is present in the story. Generally, this means that when judging what act is morally permissible, people want to prefer acts that will benefit themselves.</p>
